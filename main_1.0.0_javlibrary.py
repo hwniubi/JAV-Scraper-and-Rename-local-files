@@ -297,7 +297,7 @@ while start_key == '':
             # 判断是不是视频，得到车牌号
             if raw_file.endswith(type_tuple) and not raw_file.startswith('.'):
                 videos_num += 1
-                video_num_g = re.search(r'([a-zA-Z]{2,6})-? ?(\d{2,5})', raw_file)    # 这个正则表达式匹配“车牌号”可能有点奇怪，
+                video_num_g = re.search(r'([a-zA-Z]{2,6})-? ?\.?-?(\d{2,5})', raw_file)    # 这个正则表达式匹配“车牌号”可能有点奇怪，
                 if str(video_num_g) != 'None':                               # 如果你下过上千部片，各种参差不齐的命名，你就会理解我了。
                     num_pref = video_num_g.group(1).upper()
                     num_suf = video_num_g.group(2)
